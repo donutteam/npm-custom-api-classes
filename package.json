@@ -1,0 +1,26 @@
+{
+  "name": "@donutteam/custom-api-classes",
+  "version": "1.0.0",
+  "description": "A collection of classes to simplify building and communicating with custom APIs.",
+  "main": "./index.js",
+  "scripts": {
+    "lint": "eslint . -c ./.eslintrc.cjs",
+    "lint-fix": "eslint . -c ./.eslintrc.cjs --fix"
+  },
+  "keywords": [
+    "api",
+    "json",
+    "fetch"
+  ],
+  "author": "Donut Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donutteam/custom-api-classes.git"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@donutteam/eslint-config": "^1.0.4",
+    "koa": "^2.13.4"
+  }
+}
