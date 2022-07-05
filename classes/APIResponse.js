@@ -40,7 +40,7 @@ export class APIResponse
 	/**
 	 * Constructs a new APIResponse.
 	 * 
-	 * @param {APIResponse} apiResponse Another APIResponse or an APIResponse-like object to initialise this one with.
+	 * @param {APIResponse} [apiResponse] Another APIResponse or an APIResponse-like object to initialise this one with. Optional.
 	 * @author Loren Goodwin
 	 */
 	constructor(apiResponse)
