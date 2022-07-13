@@ -1,4 +1,12 @@
 //
+// Imports
+//
+
+/**
+ * @typedef {import("./API").APIMessage} APIMessage
+ */
+
+//
 // Class
 //
 
