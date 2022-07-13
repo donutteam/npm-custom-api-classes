@@ -1,6 +1,6 @@
 {
   "name": "@donutteam/custom-api-classes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A collection of classes to simplify building and communicating with custom APIs.",
   "main": "./index.js",
   "scripts": {
