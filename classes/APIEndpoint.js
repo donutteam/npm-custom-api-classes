@@ -62,6 +62,11 @@ export class APIEndpoint
 			}
 			catch(error)
 			{
+				if (context.status < 400)
+				{
+					context.status = 500;
+				}
+
 				new APIResponse()
 					.addMessage({ code: "UNKNOWN_ERROR", message: "An unknown error occured." })
 					.addToKoaResponse(context);
