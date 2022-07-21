@@ -45,6 +45,8 @@ export class APIEndpoint
 
 		this.execute = async (context, next) =>
 		{
+			context.response.status = 200;
+
 			try
 			{
 				const response = new APIResponse();
@@ -58,18 +60,18 @@ export class APIEndpoint
 					response.addMessage({ code: "NOT_IMPLEMENTED", message: "This endpoint is not implemented yet." });
 				}
 
-				if (!response.success && context.status < 400)
+				if (!response.success && context.response.status < 400)
 				{
-					context.status = 400;
+					context.response.status = 400;
 				}
 	
 				response.addToKoaResponse(context);
 			}
 			catch(error)
 			{
-				if (context.status < 400)
+				if (context.response.status < 400)
 				{
-					context.status = 500;
+					context.response.status = 500;
 				}
 
 				new APIResponse()
