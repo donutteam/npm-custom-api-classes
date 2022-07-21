@@ -124,7 +124,7 @@ export class APIResponse
 	 */
 	mergeInfo(object)
 	{
-		this.data =
+		this.info =
 		{
 			...this.info,
 			...object,
