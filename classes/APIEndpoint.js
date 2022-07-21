@@ -57,6 +57,11 @@ export class APIEndpoint
 				{
 					response.addMessage({ code: "NOT_IMPLEMENTED", message: "This endpoint is not implemented yet." });
 				}
+
+				if (!response.success && context.status < 400)
+				{
+					context.status = 400;
+				}
 	
 				response.addToKoaResponse(context);
 			}
