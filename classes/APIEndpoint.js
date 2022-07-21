@@ -12,7 +12,6 @@ import { APIResponse } from "./APIResponse.js";
  * @callback APIEndpointCallback
  * @param {import("koa").Context} context A Koa context.
  * @param {APIResponse} response 
- * @returns {Promise<void>}
  */
 
 /**
@@ -51,6 +50,10 @@ export class APIEndpoint
 				{
 					await this.callback(context, response);
 				}
+				else
+				{
+					response.addMessage({ code: "NOT_IMPLEMENTED", message: "This endpoint is not implemented yet." });
+				}
 	
 				response.addToKoaResponse(context);
 			}
@@ -61,5 +64,15 @@ export class APIEndpoint
 					.addToKoaResponse(context);
 			}
 		};
+	}
+
+	/**
+	 * Sets the callback for this endpoint.
+	 * 
+	 * @param {APIEndpointCallback} callback
+	 */
+	setCallback(callback)
+	{
+		this.callback = callback;
 	}
 }
