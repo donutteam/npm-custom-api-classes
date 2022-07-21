@@ -36,10 +36,13 @@ export class APIEndpoint
 	/**
 	 * Constructs a new APIEndpoint.
 	 * 
+	 * @param {APIEndpointCallback} [callback] A callback for this endpoint. Optional, can be set later with setCallback.
 	 * @author Loren Goodwin 
 	 */
-	constructor()
+	constructor(callback)
 	{
+		this.callback = callback;
+
 		this.execute = async (context, next) =>
 		{
 			try
