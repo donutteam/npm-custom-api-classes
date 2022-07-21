@@ -1,16 +1,7 @@
 //
-// Imports
-//
-
-import { API } from "./classes/API.js";
-import { APIResponse } from "./classes/APIResponse.js";
-
-//
 // Exports
 //
 
-export
-{
-	API,
-	APIResponse,
-};
+export * from "./classes/API.js";
+export * from "./classes/APIEndpoint.js";
+export * from "./classes/APIResponse.js";
