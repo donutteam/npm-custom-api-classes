@@ -12,6 +12,7 @@ import { APIResponse } from "./APIResponse.js";
  * @callback APIEndpointCallback
  * @param {import("koa").Context} context A Koa context.
  * @param {APIResponse} response 
+ * @returns {Promise<void>}
  */
 
 /**
@@ -48,7 +49,7 @@ export class APIEndpoint
 
 				if (this.callback != null)
 				{
-					this.callback(context, response);
+					await this.callback(context, response);
 				}
 	
 				response.addToKoaResponse(context);
