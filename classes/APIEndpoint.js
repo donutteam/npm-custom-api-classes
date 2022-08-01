@@ -69,6 +69,8 @@ export class APIEndpoint
 			}
 			catch(error)
 			{
+				console.error("[APIEndpoint] An error occured:", error);
+
 				if (context.response.status < 400)
 				{
 					context.response.status = 500;
