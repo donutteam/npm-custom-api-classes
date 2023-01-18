@@ -2,44 +2,31 @@
 // Imports
 //
 
+import type { Middleware } from "koa";
+
 import { APIResponse } from "./APIResponse.js";
+
+import type { KoaAPIEndpointCallback } from "../types/KoaAPIEndpointCallback.js";
 
 //
 // Exports
 //
 
-/**
- * @callback APIEndpointCallback
- * @param {import("koa").Context} context A Koa context.
- * @param {APIResponse} response 
- */
-
-/**
- * A class for creating an API endpoint compatible with Koa.
- */
-export class APIEndpoint
+/** A class for creating an API endpoint compatible with Koa. */
+export class KoaAPIEndpoint
 {
-	/**
-	 * The endpoint's callback.
-	 * 
-	 * @type {APIEndpointCallback}
-	 */
-	callback = null;
+	/** This endpoint's callback. */
+	public callback : KoaAPIEndpointCallback;
 
-	/**
-	 * The middleware function.
-	 * 
-	 * @type {import("koa").Middleware}
-	 */
-	execute;
+	/** The middleware function. */
+	public execute : Middleware;
 
 	/**
 	 * Constructs a new APIEndpoint.
 	 * 
-	 * @param {APIEndpointCallback} [callback] A callback for this endpoint. Optional, can be set later with setCallback.
 	 * @author Loren Goodwin 
 	 */
-	constructor(callback)
+	public constructor(callback? : KoaAPIEndpointCallback)
 	{
 		this.callback = callback;
 
@@ -83,12 +70,8 @@ export class APIEndpoint
 		};
 	}
 
-	/**
-	 * Sets the callback for this endpoint.
-	 * 
-	 * @param {APIEndpointCallback} callback
-	 */
-	setCallback(callback)
+	/** Sets the callback for this endpoint. */
+	public setCallback(callback : KoaAPIEndpointCallback)
 	{
 		this.callback = callback;
 	}
