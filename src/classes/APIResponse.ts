@@ -19,10 +19,10 @@ export class APIResponse
 	public messages : APIMessage[] = [];
 
 	/** An object containing data from a database. */
-	public data : object = {};
+	public data : { [key : string] : unknown } = {};
 
 	/** An object containing any extra data generated for this response. */
-	public info : object = {};
+	public info : { [key : string] : unknown } = {};
 
 	/**
 	 * Constructs a new APIResponse.
