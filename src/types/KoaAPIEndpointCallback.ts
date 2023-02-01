@@ -10,4 +10,4 @@ import type { APIResponse } from "./../classes/APIResponse.js";
 // Type
 //
 
-export type KoaAPIEndpointCallback = (context : Context | object, response : APIResponse) => Promise<unknown>;
+export type KoaAPIEndpointCallback = (context : Context | unknown, response : APIResponse) => Promise<unknown>;
